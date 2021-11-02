@@ -46,5 +46,49 @@ public class Main {
         list.removeLast();
         System.out.println(list.print());
 
+        System.out.println("демонстрация работы двухсвязного списка".toUpperCase());
+        DoublyLinkedList doublyList = new DoublyLinkedList();
+
+        int [] data1 = {6, 3, 2};
+        int [] data2 = {8, 37, 288};
+        int [] data3 = {77, 66, 55};
+
+        System.out.println("Добавление массива данных в начало списка");
+        doublyList.addArrayFirst(data1);
+        doublyList.addArrayFirst(data2);
+
+        System.out.println("Распечатование с начала");
+        System.out.println(doublyList.printFromStart());
+
+        System.out.println("Распечатование с конца");
+        System.out.println(doublyList.printFromEnd());
+
+        System.out.println("Добавление массива данных в конец списка");
+        doublyList.addArrayLast(data3);
+        System.out.println(doublyList.printFromStart());
+        System.out.println(doublyList.printFromEnd());
+
+        System.out.println("Добавление массива данных в дополнительный список #1 ");
+        DoublyLinkedList doublyListToAdd1 = new DoublyLinkedList();
+        int [] data4 = {1000, 1000, 1000};
+
+        System.out.println("Добавление дополнительного списока #1 в начало основного");
+        doublyListToAdd1.addArrayFirst(data4);
+        System.out.println(doublyListToAdd1.printFromStart());
+        doublyList.addListFirst(doublyListToAdd1);
+        System.out.println(doublyList.printFromStart());
+        System.out.println(doublyList.printFromEnd());
+
+        System.out.println("Добавление массива данных в дополнительный список #2 ");
+        int [] data5 = {5000, 5000, 5000};
+        DoublyLinkedList doublyListToAdd2 = new DoublyLinkedList();
+        doublyListToAdd2.addArrayFirst(data5);
+        System.out.println(doublyListToAdd2.printFromStart());
+
+        System.out.println("Добавление дополнительного списока #2 в конец основного");
+        doublyList.addListLast(doublyListToAdd2);
+        System.out.println(doublyList.printFromStart());
+        System.out.println(doublyList.printFromEnd());
+
     }
 }
